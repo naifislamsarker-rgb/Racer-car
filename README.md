@@ -1,21 +1,32 @@
+<div align="center">
+
 # 🏎️ Racer Car
 
-A browser-based racing car game built with [Google AI Studio](https://aistudio.google.com/).
+A fast, browser-based racing game built with [Google AI Studio](https://aistudio.google.com/).
 
-**▶️ Play it live:** [racing-car-2.ai.studio](https://racing-car-2.ai.studio)
+[![Play Now](https://img.shields.io/badge/▶_Play_Now-racing--car--2.ai.studio-red?style=for-the-badge)](https://racing-car-2.ai.studio)
+
+![License](https://img.shields.io/github/license/naifislamsarker-rgb/Racer-car)
+![Last commit](https://img.shields.io/github/last-commit/naifislamsarker-rgb/Racer-car)
+![Stars](https://img.shields.io/github/stars/naifislamsarker-rgb/Racer-car?style=social)
+
+<!-- Replace with your own screenshot or GIF: put it in a /screenshots folder -->
+<img src="screenshots/gameplay.gif" alt="Racer Car gameplay" width="600">
+
+</div>
 
 ---
 
 ## About
 
-Racer Car is a fast, simple racing game that runs right in your browser. Steer your car, dodge obstacles, and try to beat your best score. No installation needed.
+Racer Car runs right in your browser, with no installation needed. Steer your car, dodge obstacles, and try to beat your best score.
 
 ## Features
 
 - Smooth, responsive car controls
 - Increasing speed and difficulty as you go
 - Score tracking
-- Runs in any modern browser, on desktop and mobile
+- Works on desktop and mobile browsers
 
 ## How to Play
 
@@ -26,66 +37,40 @@ Racer Car is a fast, simple racing game that runs right in your browser. Steer y
 | Accelerate | `↑` or `W` |
 | Brake | `↓` or `S` |
 
-> Adjust this table if your game uses different controls.
+> Adjust this table to match your game's real controls.
 
 ## Run Locally
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/naifislamsarker-rgb/Racer-car.git
-   cd Racer-car
-   ```
+```bash
+git clone https://github.com/naifislamsarker-rgb/Racer-car.git
+cd Racer-car
+npm install
+cp .env.example .env.local   # then add your own GEMINI_API_KEY if needed
+npm run dev
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables** (only if the app uses the Gemini API)
-   Create a `.env.local` file and add:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
-
-4. **Start the dev server**
-   ```bash
-   npm run dev
-   ```
-
-5. Open the local URL shown in your terminal (usually `http://localhost:3000`).
+Open the local URL shown in your terminal (usually `http://localhost:3000`).
 
 ## Tech Stack
 
-- Google AI Studio (app generation)
+- Google AI Studio
 - HTML5 / JavaScript / CSS
 - Gemini API (if used)
+- GitHub Actions for CI and GitHub Pages deployment
 
-## Project Structure
+## Roadmap
 
-```
-Racer-car/
-├── src/            # Game source code
-├── public/         # Static assets
-├── index.html      # Entry point
-├── package.json
-└── README.md
-```
+See [ROADMAP.md](ROADMAP.md) for planned features such as a leaderboard, sound, power-ups and AI opponents.
 
 ## Contributing
 
-Contributions are welcome!
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Commit your changes (`git commit -m "Add my feature"`)
-4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Released under the [MIT License](LICENSE).
 
 ## Author
 
-**naifislamsarker-rgb**
-GitHub: [@naifislamsarker-rgb](https://github.com/naifislamsarker-rgb)
+**naifislamsarker-rgb** · [GitHub](https://github.com/naifislamsarker-rgb)
