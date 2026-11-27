@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Public user profile parameters",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User identifier" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "highScore": { "type": "number", "description": "All time high score" },
+        "photoURL": { "type": "string", "description": "Base64 or Preset URL of the avatar" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Profile creation timestamp" }
+      },
+      "required": ["uid", "displayName", "createdAt"]
+    },
+    "UserPrivateInfo": {
+      "title": "UserPrivateInfo",
+      "description": "Private user PII (Split Collection strategy)",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email", "description": "Private user email address" }
+      },
+      "required": ["email"]
+    },
+    "HighScoreEntry": {
+      "title": "HighScoreEntry",
+      "description": "Competitive score listings",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "User identifier" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "score": { "type": "number", "description": "Max scoring achieved" },
+        "level": { "type": "number", "description": "Game level" },
+        "mode": { "type": "string", "description": "Game mode choice" },
+        "photoURL": { "type": "string", "description": "Racer profile avatar URL" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Time score was achieved" }
+      },
+      "required": ["uid", "displayName", "score", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Public profile configuration mapping"
+    },
+    "/users/{userId}/private/info": {
+      "schema": "UserPrivateInfo",
+      "description": "Isolating PII data securely per user"
+    },
+    "/scores/{scoreId}": {
+      "schema": "HighScoreEntry",
+      "description": "Track high scores globally and per-level for top leaderboard view"
+    }
+  }
+}
